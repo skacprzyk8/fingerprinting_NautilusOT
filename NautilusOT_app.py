@@ -32,8 +32,8 @@ class MultiCSVApp:
 
     def __init__(self):
         self.window = tk.Tk()
-        self.window.title("Multi CSV Loader")
-        self.window.geometry("800x600")
+        self.window.title("Device Fingerprinting App")
+        self.window.geometry("900x700")
         # Internal storage for loaded DataFrames
         self.data_frames = {}
         # CSV-assigned DataFrames
@@ -298,12 +298,12 @@ class MultiCSVApp:
             if self.canvas:
                 self.canvas.get_tk_widget().destroy()
             # Plot results
-            fig, ax = plt.subplots(figsize=(6, 4))
+            fig, ax = plt.subplots(figsize=(8, 5))
             value_counts.plot(kind='bar', ax=ax, color='skyblue')
             ax.set_title('Predicted Category Distribution')
             ax.set_xlabel('Category')
             ax.set_ylabel('Count')
-            ax.tick_params(axis='x', rotation=45)
+            ax.tick_params(axis='x', rotation=0)
 
             self.canvas = FigureCanvasTkAgg(fig, master=self.window)
             self.canvas.draw()
